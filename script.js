@@ -1,51 +1,52 @@
-// ----------------------------------
+// ==================================
 // RepairFormat for Google Sheets 1.0
-// ----------------------------------
+// ==================================
 //
-// INSTALLATION:
+// INSTALLATION
+// ------------
 // 
 // If you haven't installed this as an add-on, you can use it by clicking
 // 'Tools' > 'Script editor' in Sheets and then pasting the code into the
 // Code.gs document. You might then need to "bind" the script to the sheet
 // you're working with.
-//12345678901234567890123456789012345678901234567890123456789012345678901234567|
-//12345678901234567890123456789012345678901234567890123456789012345678901234567|
-//12345678901234567890123456789012345678901234567890123456789012345678901234567|
-//12345678901234567890123456789012345678901234567890123456789012345678901234567|
-//12345678901234567890123456789012345678901234567890123456789012345678901234567|
 //
-// USAGE:
+// USAGE
+// -----
 //
 // When you click on the add-on's menu item, it will perform the following
 // operations on every part of the sheet which has content:
 //
-// 1. Clear formatting for text (bold, italics, text color, etc.)
-// 2. Set 'Font size' to a consistent value across all content
-// 3. Auto-resize all columns to fit their content
-// 4. Set 'Horizontal align' to 'Left'
-//
+// 1. Clears formatting for text (bold, italics, text color, etc.)
+// 2. Sets 'Font size'
+// 3. Sets 'Font' (font family)
+// 4. Sets 'Horizontal align'
+// 5. Auto-resizes all columns to fit their content (has a slight delay)
 
-fontSize = 14;
-alignment = "left";
+var preferences = {
+  fontSize: 14,
+  alignment: "left",
+  fontFamily: "Consolas"
+};
 
 function repairFormat() {
   var sheet = SpreadsheetApp.getActiveSheet();
-  clearFormats(sheet);
-  increaseFontSize(sheet);
-  horizontallyAlign(sheet);
+  sheet.clearFormats();
+  setFontSize(sheet);
+  setFontFamily(sheet);
+  setHorizontalAlignment(sheet);
   autoResizeColumns(sheet);
 }
 
-function clearFormats(sheet) {
-  sheet.clearFormats();
-}
-
-function increaseFontSize(sheet) {
-  sheet.getDataRange().setFontSize(fontSize);
+function setFontSize(sheet) {
+  sheet.getDataRange().setFontSize(preferences.fontSize);
 };
 
-function horizontallyAlign(sheet) {
-  sheet.getDataRange().setHorizontalAlignment(alignment);
+function setFontFamily(sheet) {
+  sheet.getDataRange().setFontFamily(preferences.fontFamily);
+};
+
+function setHorizontalAlignment(sheet) {
+  sheet.getDataRange().setHorizontalAlignment(preferences.alignment);
 };
 
 function autoResizeColumns(sheet) {
