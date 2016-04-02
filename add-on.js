@@ -1,42 +1,57 @@
-var headerRowPreferences = {
-  fontSize: 14,
+var headerPreferences = {
   alignment: "center",
   fontFamily: "Consolas",
-  skipHeaderRow: true
+  fontLine: "underline",
+  fontSize: 14,
+  fontWeight: "bold"
 };
 
-var sheetPreferences = {
-  fontSize: 14,
+var bodyPreferences = {
   alignment: "left",
   fontFamily: "Consolas",
-  skipHeaderRow: true
+  fontLine: "none",
+  fontSize: 14,
+  fontWeight: "normal"
 };
 
-function repairFormat() {
+function main() {
   var sheet = SpreadsheetApp.getActiveSheet();
-  
   clearFormats(sheet);
-  setFontSize(sheet);
-  setFontFamily(sheet);
-  setHorizontalAlignment(sheet);
+  setFontFamilies(sheet);
+  setFontLines(sheet);
+  setFontSizes(sheet);
+  setFontWeights(sheet);
+  setHorizontalAlignments(sheet);
   autoResizeColumns(sheet);
-//  formatHeaderRow();
 }
 
 function clearFormats(sheet) {
     sheet.clearFormats();
 }
 
-function setFontSize(sheet) {
-  sheet.getDataRange().setFontSize(sheetPreferences.fontSize);
+function setFontFamilies(sheet) {
+  getHeaderRow(sheet).setFontFamily(headerPreferences.fontFamily);
+  getBodyRows(sheet).setFontFamily(bodyPreferences.fontFamily);
 };
 
-function setFontFamily(sheet) {
-  sheet.getDataRange().setFontFamily(sheetPreferences.fontFamily);
+function setFontLines(sheet) {
+  getHeaderRow(sheet).setFontLine(headerPreferences.fontLine);
+  getBodyRows(sheet).setFontLine(bodyPreferences.fontLine);
+}
+
+function setFontSizes(sheet) {
+  getHeaderRow(sheet).setFontSize(headerPreferences.fontSize);
+  getBodyRows(sheet).setFontSize(bodyPreferences.fontSize);
 };
 
-function setHorizontalAlignment(sheet) {
-  sheet.getDataRange().setHorizontalAlignment(sheetPreferences.alignment);
+function setFontWeights(sheet) {
+  getHeaderRow(sheet).setFontWeight(headerPreferences.fontWeight);
+  getBodyRows(sheet).setFontWeight(bodyPreferences.fontWeight);
+};
+
+function setHorizontalAlignments(sheet) {
+  getHeaderRow(sheet).setHorizontalAlignment(headerPreferences.alignment);
+  getBodyRows(sheet).setHorizontalAlignment(bodyPreferences.alignment);
 };
 
 function autoResizeColumns(sheet) {
@@ -46,9 +61,17 @@ function autoResizeColumns(sheet) {
   }
 }
 
+function getBodyRows(sheet) {
+  return sheet.getRange(2, 1, sheet.getLastRow() - 1, sheet.getLastColumn());  
+}
+
+function getHeaderRow(sheet) {
+  return sheet.getRange(1, 1, 1, sheet.getLastColumn());  
+}
+
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
-  ui.createMenu('RepairFormat')
-      .addItem('Run', 'repairFormat')
+  ui.createMenu('Beautify')
+      .addItem('Active sheet', 'main')
       .addToUi();
 }
