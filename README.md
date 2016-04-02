@@ -2,7 +2,7 @@
 
 ## What is it?
 
-This script strips special formatting from a Google Sheet, and then applies new formatting (per a preferences object) to the sheet.
+This is an add-on for Google Sheets. It strips special formatting from a Sheet, and then applies new formatting (per two preferences objects) to the sheet.
 
 ## Why use it?
 
