@@ -10,7 +10,13 @@ I use Google Sheets to track my checking account. Every couple weeks, I perform 
 
 ## Installation
 
-If you haven't installed this as an add-on, you can use it by clicking 'Tools' > 'Script editor' in Sheets and then pasting the code into the Code.gs document. Save the .gs file, and then reload the tab your spreadsheet is in.
+If you haven't installed this as an add-on, you can use it by:
+
+1. Copying the code from main.js to your clipboard
+2. In Google Sheets, clicking 'Tools' > 'Script editor'
+3. Pasting the code into the Code.gs document
+4. Saving the .gs file
+5. Reloading the tab your spreadsheet is in
 
 ## Usage
 
