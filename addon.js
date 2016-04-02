@@ -20,7 +20,7 @@ function repairFormat() {
   setFontFamily(sheet);
   setHorizontalAlignment(sheet);
   autoResizeColumns(sheet);
-  formatHeaderRow();
+//  formatHeaderRow();
 }
 
 function clearFormats(sheet) {
