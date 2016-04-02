@@ -12,7 +12,7 @@ I use Google Sheets to track my checking account. Every couple weeks, I perform 
 
 If you haven't installed this as an add-on, you can use it by:
 
-1. Copying the code from main.js to your clipboard
+1. Copying the code from the 'addon.js' file to your clipboard
 2. In Google Sheets, clicking 'Tools' > 'Script editor'
 3. Pasting the code into the Code.gs document
 4. Saving the .gs file
@@ -20,10 +20,10 @@ If you haven't installed this as an add-on, you can use it by:
 
 ## Usage
 
-You will now see a 'RepairFormat' menu item to the right of the 'Help' menu item. Simply click 'RepairFormat' and then click 'Run'. The script will take a couple seconds to run (most of it is quick, but auto-resizing columns is slow).
+You will now see a 'RepairFormat' menu item to the right of the 'Help' menu item. Simply click 'RepairFormat' and then click 'Run'. The add-on will take a couple seconds to run (most of it is quick, but auto-resizing columns is slow).
 
 To alter the add-on's behavior, simply edit the values in the two preferences objects near the top of the file to your desired settings.
 
 ---
 
-1. Yes, I'm aware of right click > 'Paste special' > 'Paste values only', but I am lazy. This requires four actions, for *every* pasted item. With this script, I can reduce this down to three actions *total*.
+1. Yes, I'm aware of right click > 'Paste special' > 'Paste values only', but I am lazy. This requires four actions, for *every* pasted item. With this add-on, I can reduce this down to three actions *total*.
