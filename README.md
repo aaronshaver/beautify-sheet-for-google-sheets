@@ -12,7 +12,7 @@ I use Google Sheets to track my checking account. Every couple weeks, I perform 
 
 If you haven't installed this as an add-on, you can use it by:
 
-1. Copying the code from the 'addon.js' file to your clipboard
+1. Copying the code from the 'add-on.js' file to your clipboard
 2. In Google Sheets, clicking 'Tools' > 'Script editor'
 3. Pasting the code into the Code.gs document
 4. Saving the .gs file
