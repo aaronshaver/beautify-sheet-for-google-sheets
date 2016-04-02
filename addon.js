@@ -1,6 +1,6 @@
-var sheetPreferences = {
+var headerRowPreferences = {
   fontSize: 14,
-  alignment: "left",
+  alignment: "center",
   fontFamily: "Consolas",
   skipHeaderRow: true
 };
@@ -14,6 +14,7 @@ var sheetPreferences = {
 
 function repairFormat() {
   var sheet = SpreadsheetApp.getActiveSheet();
+  
   clearFormats(sheet);
   setFontSize(sheet);
   setFontFamily(sheet);
