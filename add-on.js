@@ -16,17 +16,13 @@ var bodyPreferences = {
 
 function main() {
   var sheet = SpreadsheetApp.getActiveSheet();
-  clearFormats(sheet);
+  sheet.clearFormats();
   setFontFamilies(sheet);
   setFontLines(sheet);
   setFontSizes(sheet);
   setFontWeights(sheet);
   setHorizontalAlignments(sheet);
   autoResizeColumns(sheet);
-}
-
-function clearFormats(sheet) {
-    sheet.clearFormats();
 }
 
 function setFontFamilies(sheet) {
