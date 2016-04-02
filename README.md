@@ -16,7 +16,7 @@ If you haven't installed this as an add-on, you can use it by clicking 'Tools' >
 
 You will now see a 'RepairFormat' menu item to the right of the 'Help' menu item. Simply click 'RepairFormat' and then click 'Run'. The script will take a couple seconds to run (most of it is quick, but auto-resizing columns is slow).
 
-To alter the add-on's behavior, simply edit the values in the two preferences objects near the top of the file to your desires settings.
+To alter the add-on's behavior, simply edit the values in the two preferences objects near the top of the file to your desired settings.
 
 ---
 
