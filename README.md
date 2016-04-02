@@ -1,4 +1,4 @@
-# RepairFormat for Google Sheets 2.0
+# RepairFormat for Google Sheets 1.01
 
 ## What is it?
 
