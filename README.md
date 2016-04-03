@@ -1,4 +1,4 @@
-# Beautify Sheet 2.0 (for Google Sheets)
+# Beautify Sheet 2.1 (for Google Sheets)
 
 ## What is it?
 
