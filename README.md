@@ -2,11 +2,11 @@
 
 ## What is it?
 
-This is an add-on for Google Sheets. It strips special formatting from a Sheet, and then applies new formatting (per two preferences objects) to the sheet.
+This is an add-on for Google Sheets. It strips special formatting from a sheet, and then applies new formatting (per two preferences objects) to the sheet.
 
 ## Why use it?
 
-I use Google Sheets to track my checking account. Every couple weeks, I perform edits on the sheet and part of this includes pasting in confirmation numbers<sup>1</sup> and other data from billing websites. Most of this data is not plaintext -- it comes with bold, color, different font sizes, etc. My sheet looks like a mess after pasting in these pieces of text a bunch of times. So, now, in order to get a consistent look back to my spreadsheet, I can simply click the 'Beautify' > 'Active sheet' menu items and have it scrub out those special formatting changes automatically.
+I use Google Sheets to track my checking account. Every couple weeks, I perform edits on the sheet and part of this includes pasting in confirmation numbers<sup>1</sup> and other data from billing websites. Most of this data is not plaintext -- it comes with bold, color, different font sizes, etc. My sheet looks like a mess after pasting in these pieces of text a bunch of times. But now, using this add-on, to get a consistent look back to my spreadsheet, I simply click the 'Beautify' > 'Active sheet' menu items. It then scrubs out those special formatting changes for me.
 
 ## Installation
 
@@ -26,4 +26,4 @@ To alter the add-on's behavior, simply edit the values in the two preferences ob
 
 ---
 
-1. Yes, I'm aware of right click > 'Paste special' > 'Paste values only', but I am lazy. This requires four actions, for *every* pasted item. With this add-on, I can reduce this down to three actions *total*.
+1. Yes, I'm aware of right click > 'Paste special' > 'Paste values only', but I am lazy. This requires four actions, for *every* pasted item. With this add-on, I can reduce this down to three actions *total* (i.e. no matter how many specially formatted pieces of text you've pasted in).
