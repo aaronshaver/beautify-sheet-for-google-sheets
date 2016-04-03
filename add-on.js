@@ -17,52 +17,59 @@ var bodyPreferences = {
 function main() {
   var sheet = SpreadsheetApp.getActiveSheet();
   sheet.clearFormats();
-  setFontFamilies(sheet);
-  setFontLines(sheet);
-  setFontSizes(sheet);
-  setFontWeights(sheet);
-  setHorizontalAlignments(sheet);
-  autoResizeColumns(sheet);
+
+  var totalRows = sheet.getLastRow();
+  var lastColumn = sheet.getLastColumn();
+  var headerRow = getHeaderRow(sheet, totalRows, lastColumn);
+  var bodyRows = getBodyRows(sheet, totalRows, lastColumn);
+
+  setFontFamilies(sheet, headerRow, bodyRows);
+  setFontLines(sheet, headerRow, bodyRows);
+  setFontSizes(sheet, headerRow, bodyRows);
+  setFontWeights(sheet, headerRow, bodyRows);
+  setHorizontalAlignments(sheet, headerRow, bodyRows);
+
+  autoResizeColumns(sheet, lastColumn);
 }
 
-function setFontFamilies(sheet) {
-  getHeaderRow(sheet).setFontFamily(headerPreferences.fontFamily);
-  getBodyRows(sheet).setFontFamily(bodyPreferences.fontFamily);
+function setFontFamilies(sheet, headerRow, bodyRows) {
+  if (headerRow) headerRow.setFontFamily(headerPreferences.fontFamily);
+  if (bodyRows) bodyRows.setFontFamily(bodyPreferences.fontFamily);
 };
 
-function setFontLines(sheet) {
-  getHeaderRow(sheet).setFontLine(headerPreferences.fontLine);
-  getBodyRows(sheet).setFontLine(bodyPreferences.fontLine);
+function setFontLines(sheet, headerRow, bodyRows) {
+  if (headerRow) headerRow.setFontLine(headerPreferences.fontLine);
+  if (bodyRows) bodyRows.setFontLine(bodyPreferences.fontLine);
 }
 
-function setFontSizes(sheet) {
-  getHeaderRow(sheet).setFontSize(headerPreferences.fontSize);
-  getBodyRows(sheet).setFontSize(bodyPreferences.fontSize);
+function setFontSizes(sheet, headerRow, bodyRows) {
+  if (headerRow) headerRow.setFontSize(headerPreferences.fontSize);
+  if (bodyRows) bodyRows.setFontSize(bodyPreferences.fontSize);
 };
 
-function setFontWeights(sheet) {
-  getHeaderRow(sheet).setFontWeight(headerPreferences.fontWeight);
-  getBodyRows(sheet).setFontWeight(bodyPreferences.fontWeight);
+function setFontWeights(sheet, headerRow, bodyRows) {
+  if (headerRow) headerRow.setFontWeight(headerPreferences.fontWeight);
+  if (bodyRows) bodyRows.setFontWeight(bodyPreferences.fontWeight);
 };
 
-function setHorizontalAlignments(sheet) {
-  getHeaderRow(sheet).setHorizontalAlignment(headerPreferences.alignment);
-  getBodyRows(sheet).setHorizontalAlignment(bodyPreferences.alignment);
+function setHorizontalAlignments(sheet, headerRow, bodyRows) {
+  if (headerRow) headerRow.setHorizontalAlignment(headerPreferences.alignment);
+  if (bodyRows) bodyRows.setHorizontalAlignment(bodyPreferences.alignment);
 };
 
-function autoResizeColumns(sheet) {
-  lastColumn = sheet.getLastColumn()
-  for (i = 1; i < lastColumn; i++) {
+function autoResizeColumns(sheet, lastColumn) {
+  for (i = 1; i <= lastColumn; i++) {
     sheet.autoResizeColumn(i);
   }
 }
 
-function getBodyRows(sheet) {
-  return sheet.getRange(2, 1, sheet.getLastRow() - 1, sheet.getLastColumn());  
+function getHeaderRow(sheet, totalRows, lastColumn) {
+  if (totalRows > 0) return sheet.getRange(1, 1, 1, lastColumn);  
+  return null;
 }
-
-function getHeaderRow(sheet) {
-  return sheet.getRange(1, 1, 1, sheet.getLastColumn());  
+function getBodyRows(sheet, totalRows, lastColumn) {
+  if (totalRows > 1) return sheet.getRange(2, 1, totalRows - 1, lastColumn);
+  return null;
 }
 
 function onOpen() {
