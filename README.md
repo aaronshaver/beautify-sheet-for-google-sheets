@@ -6,7 +6,7 @@ This is an add-on for Google Sheets. It strips special formatting from a sheet, 
 
 ## Why use it?
 
-I use Google Sheets to track my checking account. Every couple weeks, I perform edits on the sheet and part of this includes pasting in confirmation numbers<sup>1</sup> and other data from billing websites. Most of this data is not plaintext -- it comes with bold, color, different font sizes, etc. My sheet looks like a mess after pasting in these pieces of text a bunch of times. But now, using this add-on, to get a consistent look back to my spreadsheet, I simply click the 'Beautify' > 'Active sheet' menu items. It then scrubs out those special formatting changes for me.
+I use Google Sheets to track my checking account. Every couple weeks, I perform edits on the sheet and part of this includes pasting in confirmation numbers and other data from billing websites. Most of this data is not plaintext<sup>1</sup> -- it comes with bold, color, different font sizes, etc. My sheet looks like a mess after pasting in these pieces of text a bunch of times. But now, using this add-on, to get a consistent look back to my spreadsheet, I simply click the 'Beautify' > 'Active sheet' menu items. It then scrubs out those special formatting changes for me.
 
 ## Installation
 
