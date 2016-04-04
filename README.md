@@ -26,4 +26,4 @@ To alter the add-on's behavior, simply edit the values in the two preferences ob
 
 ---
 
-1. Yes, I'm aware of right click > 'Paste special' > 'Paste values only', but I am lazy. This requires four actions, for *every* pasted item. With this add-on, I can reduce this down to three actions *total* (i.e. no matter how many specially formatted pieces of text you've pasted in).
+1. Yes, I'm aware of right click > 'Paste special' > 'Paste values only', but I am lazy. This requires four actions, for *every* pasted item. With this add-on, I can reduce this down to three actions *total* (i.e. no matter how many specially formatted pieces of text I've pasted in).
