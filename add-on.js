@@ -58,6 +58,8 @@ function setHorizontalAlignments(sheet, headerRow, bodyRows) {
 };
 
 function autoResizeColumns(sheet, lastColumn) {
+  // This is slow (on Google's end). It takes a few seconds on my 1K rows sheet
+  // It actually timed out on a 3.3 million row sheet we tried it on.
   for (i = 1; i <= lastColumn; i++) {
     sheet.autoResizeColumn(i);
   }
