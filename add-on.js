@@ -70,7 +70,8 @@ function getHeaderRow(sheet, totalRows, lastColumn) {
   return null;
 }
 function getBodyRows(sheet, totalRows, lastColumn) {
-  if (totalRows > 1) return sheet.getRange(2, 1, totalRows - 1, lastColumn);
+  var rowsMinusHeadeRow = totalRows - 1;
+  if (totalRows > 1) return sheet.getRange(2, 1, rowsMinusHeadeRow, lastColumn);
   return null;
 }
 
